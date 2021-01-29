@@ -2,10 +2,13 @@
 #define DEFAULT_CAPACITY 3
 typedef int Rank;
 template <typename T> class vector{
-	private: 
-		Rank _size ; int _capacity ; T* _elem;
 	protected:
 		/*...内部函数...*/
+		Rank _size ; int _capacity ; T* _elem;
+		void expand();
+
+		void copyFrom(T const* A,Rank lo, Rank hi);
+
 	public:
 		/*...构造函数*/
 
@@ -32,10 +35,6 @@ template <typename T> class vector{
 			return _elem[r];
 		}
 
-		void expand();
-
-		void copyFrom(T const* A,Rank lo, Rank hi);
-
 		Rank insert(Rank r,T const& e);
 
 		const T& operator[] (Rank r) const {	/*重载下标操作符[] --> const*/
@@ -58,22 +57,7 @@ template <typename T> class vector{
 
 		Rank search(const T& e, Rank lo,Rank hi);	
 
-		static binSearch(T* S, T const& e, Rank lo ,Rank hi);
+		static Rank binSearch(T* S, T const& e, Rank lo ,Rank hi);
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#include <vector_implementation.h>
