@@ -42,9 +42,9 @@ template <typename T> class vector{
 		}
 
 		int remove(Rank lo,Rank hi);	/*区间删除*/
-
 		T remove(Rank r);	/*删除单个元素*/
 
+		Rank find(T const& e) const{return find(e,0,_size);}
 		Rank find(T const& e, Rank lo, Rank hi) const;
 
 		int deduplicate();	/*无序向量去重*/
@@ -57,7 +57,6 @@ template <typename T> class vector{
 
 		Rank search(const T& e, Rank lo,Rank hi);	
 
-		static Rank binSearch(T* S, T const& e, Rank lo ,Rank hi);
 };
 
 #include <vector_implementation.h>
