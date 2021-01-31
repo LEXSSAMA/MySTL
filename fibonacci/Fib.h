@@ -9,6 +9,6 @@ class Fib{
         while(second<n) {next();}
     }
     int get() {return second;}
-    int prev() {first = second-first; second -= first;}
-    int next() {second += first; first = second - first;}
+    int prev() {first = second-first; second -= first; return second;}
+    int next() {second += first; first = second - first; return second;}
 };
