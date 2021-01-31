@@ -1,3 +1,4 @@
+#include<stdlib.h>
 #pragma once 
 #define DEFAULT_CAPACITY 3
 typedef int Rank;
@@ -9,10 +10,11 @@ template <typename T> class vector{
 
 		void copyFrom(T const* A,Rank lo, Rank hi);
 
+		void shrink();
 	public:
 		/*...构造函数*/
 
-		vector(int c = DEFAULT_CAPCITY){ /*默认*/
+		vector(int c = DEFAULT_CAPACITY){ /*默认*/
 			_elem = new T[_capacity = c]; _size = 0;
 		}
 		vector(T const* A, Rank lo, Rank hi){	/*数组之间的复制*/
@@ -57,6 +59,12 @@ template <typename T> class vector{
 
 		Rank search(const T& e, Rank lo,Rank hi);	
 
+		void sort(Rank lo,Rank hi);
+
+		int size() {return _size;}
+		bool empty() {return !_size;}
+		int getcapacity(){return _capacity;}
+
 };
 
-#include <vector_implementation.h>
+#include "vector_implementation.h"
