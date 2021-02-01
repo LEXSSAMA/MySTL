@@ -10,3 +10,5 @@ template <typename T> struct ListNode{
     Posi(T) insertAsPred(T const& e);   /*前插入*/
     Posi(T) insertAsSucc(T const& e);   /*后插入*/
 };
+
+#include "listNode_implementation.h"
