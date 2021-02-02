@@ -7,7 +7,7 @@ void List<T>::traverse(VST& visit){
         visit(p->data);
 }
 
-template<T> void List<T>::traverse(void (*visit)(T&)){
+template <typename T> void List<T>::traverse(void (*visit)(T&)){
     Posi(T) p = first();
         while(p!=trailer)
             visit(p->data);

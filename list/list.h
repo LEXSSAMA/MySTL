@@ -1,4 +1,5 @@
 #include "ListNode.h"
+#include <stdlib.h>
 
 typedef int Rank;
 template <typename T> class List{
@@ -7,16 +8,20 @@ template <typename T> class List{
 
     protected:
         void init();
-        void copyNode(Posi(T) p,int n);
-        void clear();
+        void copyNodes(Posi(T) p,int n);
+        int clear();
+        void insertionSort(Posi(T) p,int n);
+        void mergeSort(Posi(T) p,int n);
+        void selectionSort(Posi(T) p,int n);
     public:
         /*构造*/
         List(){init();}
-        List(List<T> L) {copyNode(L.first(),L._size);}
+        List(List<T>const& L ){copyNodes(L.first(),L.size());}
+        Posi(T) first() const{return header->succ;}
+        int size() const{return _size;};
         ~List(){clear();delete header; delete trailer;}
-        Posi(T) first() {return header->succ;}
         /*重载下标操作符，可模仿向量的循秩访问方式*/
-        T operator[] (Rank r) const{
+        T& operator[] (Rank r) const{
             Posi(T) p = first();
             while(0<r--)   p = p->succ;
             return p->data;
@@ -34,4 +39,11 @@ template <typename T> class List{
         int deduplicate();
         void traverse(void (*visit)(T&));
         template <typename VST> void traverse(VST& visit);
+        int uniquify();
+        Posi(T) search(T const& e,int n,Posi(T) p); /*在有序列表的n个前驱中,找到不大于e的最靠后者*/
+        /*排序*/
+        void sort(Posi(T) p,int n); /*对列表中起始为p,宽度为n的列表进行排序*/
+        void sort(){sort(first(),_size);}
 };
+
+#include "list_implementation.h"

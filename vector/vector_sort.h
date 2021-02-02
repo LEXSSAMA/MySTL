@@ -2,11 +2,11 @@
 
 template <typename T> 
 void vector<T>::sort (Rank lo,Rank hi){
-    switch (2){
+    switch (rand()%2){
     case 1:
         bubbleSort(_elem,lo,hi);  
         break;
-    case 2:
+    default:
         mergeSort(_elem,lo,hi);
         break;
     }
