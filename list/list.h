@@ -11,13 +11,14 @@ template <typename T> class List{
         void copyNodes(Posi(T) p,int n);
         int clear();
         void insertionSort(Posi(T) p,int n);
-        void mergeSort(Posi(T) p,int n);
+        void mergeSort(Posi(T)& p,int n);
         void selectionSort(Posi(T) p,int n);
     public:
         /*构造*/
         List(){init();}
         List(List<T>const& L ){copyNodes(L.first(),L.size());}
         Posi(T) first() const{return header->succ;}
+        Posi(T) last() const {return trailer->pred;}
         int size() const{return _size;};
         ~List(){clear();delete header; delete trailer;}
         /*重载下标操作符，可模仿向量的循秩访问方式*/

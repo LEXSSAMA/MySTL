@@ -2,9 +2,10 @@
 #pragma once
 
 template <typename T> void List<T>::insertionSort(Posi(T) p,int n){
-    printf("insertSort\n");
-    for(int i=1;i<n;++i){
-        Posi(T) q = search((p=p->succ)->data,i,p);
+    for(int i=0;i<n;++i){
+        Posi(T) nextp = p->succ;
+        Posi(T) q = search(p->data,i,p);
+
         p->succ->pred = p->pred;
         p->pred->succ = p->succ;
 
@@ -13,5 +14,7 @@ template <typename T> void List<T>::insertionSort(Posi(T) p,int n){
 
         q->succ->pred= p;
         q->succ =p;
+        
+        p = nextp;
     }
 }

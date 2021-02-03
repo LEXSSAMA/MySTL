@@ -1,7 +1,7 @@
 #pragma once
 
 template <typename T> void List<T>::sort(Posi(T) p,int n){
-    switch (2)
+    switch (rand()%3)
     {
     case 1:
         selectionSort(p,n);
