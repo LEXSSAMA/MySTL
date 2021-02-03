@@ -32,6 +32,7 @@ template <typename T> class List{
         Posi(T) insertA(Posi(T) p , T const& e);    /*将e当作节点p的直接后继插入*/
         Posi(T) insertAtLast(T const& e);   /*将e插入列表尾*/
         Posi(T) insertAtFirst(T const& e);  /*将e插入列表首*/
+        int disordered () const;
         T remove(Posi(T) p);
 
         /*无序列表查找和去重*/

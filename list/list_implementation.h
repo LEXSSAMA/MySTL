@@ -12,3 +12,4 @@
 #include "list_sort.h"
 #include "list_traverse.h"
 #include "list_uniquify.h"
+#include "list_disordered.h"
