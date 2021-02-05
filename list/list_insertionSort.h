@@ -1,4 +1,3 @@
-#include <stdio.h>
 #pragma once
 
 template <typename T> void List<T>::insertionSort(Posi(T) p,int n){

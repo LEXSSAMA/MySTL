@@ -20,6 +20,7 @@ template <typename T> class List{
         Posi(T) first() const{return header->succ;}
         Posi(T) last() const {return trailer->pred;}
         int size() const{return _size;};
+        bool empty() {return (_size==0)?true:false;}
         ~List(){clear();delete header; delete trailer;}
         /*重载下标操作符，可模仿向量的循秩访问方式*/
         T& operator[] (Rank r) const{
