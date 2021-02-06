@@ -33,6 +33,7 @@ template <typename T> class vector{
 			return _elem[r];
 		}
 		Rank insert(Rank r,T const& e);
+		Rank insert(T const& e){return insert(_size,e);}
 		const T& operator[] (Rank r) const {	/*重载下标操作符[] --> const*/
 			return _elem[r];
 		}
