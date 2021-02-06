@@ -18,15 +18,18 @@ bool isDigit(char & S){return (S<='9'&&S>='0')?true:false;}
 
 void readNum(stack<float>& opnd,char* & S){
     float res = 0.0; bool po = false;
+    float decimal = 0.0; float time = 10;
     while((*S=='.')||(*S<='9'&&*S>='0')){
         if(*S=='.') po = true;
-        else if(*S<='9'&&*S>='0'&&po)
-            res += (*S-'0')*1.0/10;
+        else if(*S<='9'&&*S>='0'&&po){
+            decimal = decimal+(*S-'0')/time;
+            time*=10.0;
+        }
         else
             res = res*10+(*S-'0');
         S++;
     }
-    opnd.push(res);
+    opnd.push(res+decimal);
 }
 int op_table_index(char const& op){
     switch (op)
