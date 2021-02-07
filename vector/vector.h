@@ -50,7 +50,7 @@ template <typename T> class vector{
 		void sort(Rank lo,Rank hi);
 		int size() {return _size;}
 		bool empty() {return !_size;}
-		int get(Rank r){ return (r>=_size)?-1:_elem[r];}
+		int get(Rank r){ return _elem[r];}
 		int put(Rank r,T const& e){
 			if(r>=_size)
 				return -1;
