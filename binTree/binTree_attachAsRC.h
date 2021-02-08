@@ -6,6 +6,6 @@ template <typename T> binNodePos(T) binTree<T>::attachAsRC(binNodePos(T) x, binT
     _size += S->_size;
     updateHeightAbove(x);
     S->_root = NULL; S->_size = 0;
-    delete S; S = NULL;
+    release(S); S = NULL;
     return x;
 }

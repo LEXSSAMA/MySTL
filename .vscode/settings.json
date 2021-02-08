@@ -26,6 +26,10 @@
         "deque": "cpp",
         "chrono": "cpp",
         "random": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "cstdio": "cpp",
+        "ranges": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
     }
 }

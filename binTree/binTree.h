@@ -21,4 +21,16 @@ template <typename T> class binTree(){
         /*子树接入*/
         binNodePos(T) attachAsRC(binNodePos(T) x, binTree<T>* & S); /*将二叉树S作为节点x的右子树*/
         binNodePos(T) attachAsLC(binNodePos(T) x,binTree<T>*& S);   /*将二叉树S作为节点x的左子树*/
+
+        /*子树删除*/
+        int remove(binNodePos(T) x);   /*将x节点及其儿孙节点从树上删除，返回总共删除的总数*/
+
+        /*子树分离*/
+        binTree<T>* secede(binNodePos(T) x); /*将x节点及其儿孙从树上分离，返回分离后的x所在的树*/
+
+        /*遍历*/
+        template <typename VST> void travPre(VST& visit){if(_root) _root->travPre(visit);}      /*先序遍历：对每个元素执行visit操作*/
+        template <typename VST> void travPost(VST& visit){if(_root) _root->travPost(visit);}    /*后序遍历：对每个元素执行visit操作*/
+        template <typename VST> void travLevel(VST& visit){if(_root) _root->travLevel(visit);}  /*层序遍历：对每个元素执行visit操作*/
+        template <typename VST> void travIn(VST& visit){if(_root) _root->travIn(visit);}        /*中序遍历：对每个元素执行visit操作*/
 };
