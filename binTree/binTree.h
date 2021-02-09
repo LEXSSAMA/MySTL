@@ -3,7 +3,7 @@
 
 #define stature(p) ((p)?p->heights:-1)
 
-template <typename T> class binTree(){
+template <typename T> class binTree{
     protected:
         int _size;  binNodePos(T) _root;
         virtual int updateHeight(binNodePos(T) x);  /*更新节点x的高度*/
@@ -34,3 +34,5 @@ template <typename T> class binTree(){
         template <typename VST> void travLevel(VST& visit){if(_root) _root->travLevel(visit);}  /*层序遍历：对每个元素执行visit操作*/
         template <typename VST> void travIn(VST& visit){if(_root) _root->travIn(visit);}        /*中序遍历：对每个元素执行visit操作*/
 };
+
+#include "binTree_implementation.h"

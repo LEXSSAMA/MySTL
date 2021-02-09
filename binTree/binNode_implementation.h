@@ -1,0 +1,7 @@
+#include "binNode_insertAsLeftChild.h"
+#include "binNode_insertAsRightChild.h"
+#include "binNode_size.h"
+#include "binNode_travIn.h"
+#include "binNode_travPost.h"
+#include "binNode_travPre.h"
+#include "binNode_succ.h"
