@@ -1,5 +1,7 @@
 #pragma once
 
+#include "header_file_from_outside.h"
+
 #define binNodePos(T) binNode<T>*
 
 template <typename T> struct binNode{

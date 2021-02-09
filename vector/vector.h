@@ -48,8 +48,9 @@ template <typename T> class vector{
 		int uniquify();
 		Rank search(const T& e, Rank lo,Rank hi);	
 		void sort(Rank lo,Rank hi);
-		int size() {return _size;}
-		bool empty() {return !_size;}
+		void sort(){sort(0,_size);}
+		int size() const{return _size;}
+		bool empty() const {return !_size;}
 		int get(Rank r){ return _elem[r];}
 		int put(Rank r,T const& e){
 			if(r>=_size)
