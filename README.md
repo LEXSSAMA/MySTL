@@ -4,3 +4,4 @@ Reinventing the wheel for learning Data Structure.
 - [list](https://github.com/LEXSSAMA/MySTL/tree/uncompleted/list)<br>
 - [stack](https://github.com/LEXSSAMA/MySTL/tree/main/stack)<br>
 - [queue](https://github.com/LEXSSAMA/MySTL/tree/main/queue)
+- [binTree](https://github.com/LEXSSAMA/MySTL/tree/main/binTree)
