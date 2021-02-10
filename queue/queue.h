@@ -2,6 +2,6 @@
 
 #ifdef MYSTL_QUEUE_VECTOR
 #include "queue/queue_vector.h"
-#elif
+#else
 #include "queue/queue_list.h"
 #endif

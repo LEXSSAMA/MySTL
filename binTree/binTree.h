@@ -1,7 +1,7 @@
 #include "binNode.h"
 #pragma once
 
-#define stature(p) ((p)?p->heights:-1)
+#define stature(p) ((p)?p->height:-1)
 
 template <typename T> class binTree{
     protected:
@@ -9,7 +9,7 @@ template <typename T> class binTree{
         virtual int updateHeight(binNodePos(T) x);  /*更新节点x的高度*/
         void updateHeightAbove(binNodePos(T) x);    /*更新x及祖先的高度*/
     public:
-        binTree(T const& e){_size = 1; _root = new binNode<T>(e); updateHeight(root);}
+        binTree(T const& e){_size = 1; _root = new binNode<T>(e); updateHeight(_root);}
         binTree(): _size(0), _root(NULL){}
         int size() const{return _size;}
         bool empty() {return !_root;}

@@ -1,22 +1,14 @@
 #pragma once
 
-template <typename T, typename VST>
-void binNode<T>::travIn(VST& visit){
-     siwtch(rand()%3){
-         case 1 : travInR(this,visit); break;
-         default: travInA(this,visit); break;
-     }
-}
-
 template <typename T,typename VST>
-void travInR(binNodePos(T) x,VST& visit){
+void travInR (binNodePos(T) x,VST& visit){
     if(!x) return;
     travInR(x->leftchild,visit);
     visit(x->data);
     travInR(x->rightchild,visit);
 }
 
-template <typename T,typename VST>
+template <typename T> 
 void goAlongVine(binNodePos(T) x ,stack<binNodePos(T)>& S){
     while(x){
         S.push(x); x = x->leftchild;
@@ -24,7 +16,7 @@ void goAlongVine(binNodePos(T) x ,stack<binNodePos(T)>& S){
 }
 
 template <typename T,typename VST>
-void travInA(binNodePos(T) x,VST& visit){
+void travInA (binNodePos(T) x,VST& visit){
     stack<binNodePos(T)> S;
     while(true){
         goAlongVine(x,S);
@@ -33,3 +25,12 @@ void travInA(binNodePos(T) x,VST& visit){
         x = x->rightchild;
     }
 }
+
+template <typename T> template <typename VST>
+void binNode<T>::travIn (VST& visit){
+     switch(rand()%3){
+         case 1 : travInR(this,visit); break;
+         default: travInA(this,visit); break;
+     }
+}
+

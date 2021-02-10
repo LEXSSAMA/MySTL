@@ -1,12 +1,13 @@
 #pragma once
 
 #include "header_file_from_outside.h"
+#include "marco.h"
 
 #define binNodePos(T) binNode<T>*
 
 template <typename T> struct binNode{
-    binNodePos(T) parent,leftchild,rightchild; T data; int height;
-    binNode(T const& edata){binNode(edata,NULL);}
+    binNodePos(T) parent; binNodePos(T) leftchild; binNodePos(T) rightchild; T data; int height;
+    binNode(T const& edata):parent(NULL),leftchild(NULL), rightchild(NULL),data(edata),height(0){}
     binNode(T const& edata , binNodePos(T) pa) {
         parent=pa; leftchild = NULL; rightchild = NULL; 
         data = edata; height = 0;

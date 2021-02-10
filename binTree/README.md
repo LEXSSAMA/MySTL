@@ -9,8 +9,8 @@
 | binNode\<T\>* insertAsRoot(T const& e)                       | 将e作为根节点的数据插入                           | 函数        |
 | binNode\<T\>* insertAsRC(binNode\<T\>* x, T const& e)        | 对x的右节点插入                                   | 函数        |
 | binNode\<T\>* insertAsLC(binNode\<T\>* x, T const& e)        | 对x的左节点插入                                   | 函数        |
-| binNode\<T\>* attachAsRC(binNode\<T\>* x, binTree\<T\>* & S) | 将二叉树S作为节点x的右子树                        | 函数        |
-| binNode\<T\>* attachAsLC(binNode\<T\>* x,binTree\<T\>*& S)   | 将二叉树S作为节点x的左子树                        | 函数        |
+| binNode\<T\>* attachAsRC(binNode\<T\>* x, binTree\<T\>* & S) | 将二叉树S作为节点x的右子树,执行完后S会被释放      | 函数        |
+| binNode\<T\>* attachAsLC(binNode\<T\>* x,binTree\<T\>*& S)   | 将二叉树S作为节点x的左子树, 执行完后S会被释放     | 函数        |
 | int remove(binNode\<T\>* x)                                  | 将x节点及其儿孙节点从树上删除，返回总共删除的总数 | 函数        |
 | binTree\<T\>* secede(binNode\<T\>* x)                        | 将x节点及其儿孙从树上分离，返回被分离的树         | 函数        |
 | template \<typename VST\> void travPre(VST& visit)           | 先序遍历：对每个元素执行visit操作                 | 函数        |

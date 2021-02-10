@@ -1,25 +1,12 @@
 #pragma once
 
-/*先序便利*/
-template <typename T,typename VST>
-void binNode<T>::travPre(VST& visit){
-    switch(rand()%3){
-        case 1:
-            travPreA(this,visit); break;
-        case 2:
-            travPreB(this,visit); break;
-        default:
-            travPreR(this,visit); break;
-    }
-}
-
 /*递归方式*/
 template <typename T,typename VST>
 void travPreR(binNodePos(T) x,VST& visit){
     if(!x) return ;
     visit(x->data);
-    travPreR(this->leftchild,visit);
-    travPreR(this->rightchild,visit);
+    travPreR(x->leftchild,visit);
+    travPreR(x->rightchild,visit);
 }
 
 /*迭代 + 栈*/
@@ -35,7 +22,7 @@ void travPreA(binNodePos(T) x, VST& visit){
 }
 
 template <typename T , typename VST>
-void visitAlongVine(binNodePos(T) x , VST& visit, stack<binNodepos(T)> & S){
+void visitAlongVine(binNodePos(T) x , VST& visit, stack<binNodePos(T)> & S){
     while(x){
         visit(x->data);
         S.push(x->rightchild);
@@ -44,6 +31,7 @@ void visitAlongVine(binNodePos(T) x , VST& visit, stack<binNodepos(T)> & S){
        /*没必要，只有右孩子和右孩子为NULL的情况,while(x)会跳出循环，一般情况下这两种情况相比于在二叉树中是比较少出现的,
        增加判断语句，每访问一个节点都会执行一次判断开销更大*/
 }
+
 template <typename T , typename VST>
 void travPreB(binNodePos(T) x, VST& visit){
     stack<binNodePos(T)> S;
@@ -51,5 +39,18 @@ void travPreB(binNodePos(T) x, VST& visit){
         visitAlongVine(x,visit,S);
         if(!S.empty()) break;
         x = S.pop();
+    }
+}
+
+/*先序遍历*/
+template <typename T> template <typename VST>
+void binNode<T>::travPre(VST& visit){
+    switch(rand()%3){
+        case 1:
+            travPreA(this,visit); break;
+        case 2:
+            travPreB(this,visit); break;
+        default:
+            travPreR(this,visit); break;
     }
 }

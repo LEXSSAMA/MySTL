@@ -1,18 +1,5 @@
 #pragma once
 
-template <typename T , typename VST>
-void binNode<T>::travPost(VST& visit){
-    switch (rand()%3)
-    {
-    case 1:
-        travPostR(this,visit);
-        break;
-    default:
-        travPostA(this,visit);  /*权重更大一点*/
-        break;
-    }
-}
-
 /*递归方式*/
 template <typename T , typename VST>
 void travPostR(binNodePos(T) x, VST& visit){
@@ -44,3 +31,17 @@ void travPostA(binNodePos(T) x,VST& visit){
         x = S.pop(); visit(x->data);    /*弹出栈顶,处理x*/
     }
 }
+
+template <typename T> template <typename VST>
+void binNode<T>::travPost(VST& visit){
+    switch (rand()%3)
+    {
+    case 1:
+        travPostR(this,visit);
+        break;
+    default:
+        travPostA(this,visit);  /*权重更大一点*/
+        break;
+    }
+}
+
