@@ -11,6 +11,7 @@ template <typename T> class binTree{
     public:
         binTree(T const& e){_size = 1; _root = new binNode<T>(e); updateHeight(_root);}
         binTree(): _size(0), _root(NULL){}
+        ~binTree() {if(_size>0) remove(_root);}
         int size() const{return _size;}
         bool empty() {return !_root;}
         binNodePos(T) root() {return _root;}

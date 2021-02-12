@@ -13,8 +13,9 @@ template <typename T> class vector{
 		void shrink();
 	public:
 		/*...构造函数*/
-		vector(int c = DEFAULT_CAPACITY){ /*默认*/
-			_elem = new T[_capacity = c]; _size = 0;
+		vector(int c = DEFAULT_CAPACITY,int s = 0, T v = 0){ /*容量为c,规模为s,初始化值为v*/
+			_elem = new T[_capacity = c]; 
+			for(_size=0;_size<s;_elem[_size++]=v);
 		}
 		vector(T const* A, Rank lo, Rank hi){	/*数组之间的复制*/
 			copyFrom(A,lo,hi);
