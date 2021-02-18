@@ -7,4 +7,3 @@ void vector<T>::copyFrom (T const* A, Rank lo, Rank hi){
 		_elem[_size++] = A[lo++];
 	}
 }
-

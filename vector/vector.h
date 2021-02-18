@@ -30,9 +30,12 @@ template <typename T> class vector{
 		~vector(){	/*释放内部空间*/
 			delete[] _elem;
 		}
+
 		T& operator[] (Rank r) {	/*重载下标操作符[] --> non-const*/
 			return _elem[r];
 		}
+		vector<T>& operator=(vector<T> const& that);
+		
 		Rank insert(Rank r,T const& e);
 		Rank insert(T const& e){return insert(_size,e);}
 		const T& operator[] (Rank r) const {	/*重载下标操作符[] --> const*/

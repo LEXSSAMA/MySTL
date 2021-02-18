@@ -5,3 +5,4 @@ Reinventing the wheel for learning Data Structure.
 - [stack](https://github.com/LEXSSAMA/MySTL/tree/main/stack)<br>
 - [queue](https://github.com/LEXSSAMA/MySTL/tree/main/queue)
 - [binTree](https://github.com/LEXSSAMA/MySTL/tree/main/binTree)
+- [graphicMatrix](https://github.com/LEXSSAMA/MySTL/tree/main/graphicMatrix)<br>
